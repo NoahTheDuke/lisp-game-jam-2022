@@ -1,0 +1,18 @@
+#kaocha/v1
+#meta-merge
+[{:tests [{:id :unit
+           :test-paths ["src" "test"]
+           :kaocha.filter/focus-meta ^:replace [:kaocha/focus]
+           :kaocha.filter/skip-meta ^:replace [:kaocha/skip]}]
+  :color? true
+  :fail-fast? false
+  :reporter kaocha.report.progress/report
+  :plugins [:capture-output
+            :filter
+            :print-invocations
+            :profiling
+            :randomize]
+  :kaocha.plugin.capture-output/capture-output? true
+  :kaocha.plugin.profiling/count 3
+  :kaocha.plugin.randomize/randomize? true}
+ #include "tests-user.edn"]

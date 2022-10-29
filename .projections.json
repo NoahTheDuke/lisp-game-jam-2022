@@ -1,0 +1,12 @@
+{
+  "doc/*.md": {"type": "doc"},
+  "README.md": {"type": "doc"},
+  "src/*.clj": {
+      "type": "source",
+      "alternate": "test/{}_test.clj"
+  },
+  "test/*_test.clj": {
+      "type": "test",
+      "alternate": "src/{}.clj"
+  }
+}
